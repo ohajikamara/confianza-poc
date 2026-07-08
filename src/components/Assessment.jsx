@@ -117,7 +117,7 @@ export default function Assessment({ initialAnswers = {}, initialIndex = 0, onSa
             imperfect AI-generated signage) stays cropped out. */}
         <div className="flex-1 min-h-0 relative overflow-hidden">
           <img
-            src="/cafe-scene.jpg"
+            src={`${import.meta.env.BASE_URL}cafe-scene.jpg`}
             alt=""
             className="absolute bottom-0 left-0 w-full h-[140%] object-cover object-bottom"
           />

@@ -24,7 +24,20 @@
       "mcp__dailey-os__dailey_images_generate",
       "Bash(curl -sL \"https://v3b.fal.media/files/b/0aa161e5/y7hUA1z1cViXVhV3uB1WR_7eccdb485e3045e6aa1d2d80f3369faf.jpg\" -o public/cafe-scene.jpg)",
       "Bash(git commit -m 'Restyle to Confianza design system: two-column assessment, new palette & typography *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "mcp__dailey-os__dailey_deploy",
+      "Bash(curl -s -A \"Mozilla/5.0\" \"https://confianza-poc.dailey.cloud/?v=$\\(date +%s\\)\")",
+      "Bash(curl -sI -A \"Mozilla/5.0\" https://confianza-poc.dailey.cloud)",
+      "mcp__dailey-os__dailey_build_logs",
+      "mcp__dailey-os__dailey_diagnose",
+      "mcp__dailey-os__dailey_process_restart",
+      "mcp__dailey-os__dailey_processes",
+      "mcp__dailey-os__dailey_exec",
+      "Bash(git commit --allow-empty -m 'Force fresh build to roll out restyle *)",
+      "mcp__dailey-os__dailey_support",
+      "mcp__dailey-os__dailey_run_image",
+      "Bash(curl -s -A \"Mozilla/5.0\" https://confianza-poc.dailey.cloud)",
+      "Bash(git commit -m 'Use BASE_URL for public asset path \\(GitHub Pages support\\) *)"
     ]
   }
 }
