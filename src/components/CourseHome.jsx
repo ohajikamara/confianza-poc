@@ -61,8 +61,8 @@ export default function CourseHome({ profile, completedLessons, confidenceTrend,
                   done
                     ? 'bg-teal-soft/60 border-teal-brand/20'
                     : isNext
-                      ? 'bg-white border-teal-brand shadow-md shadow-teal-brand/10'
-                      : 'bg-white/50 border-transparent opacity-50'
+                      ? 'bg-warm-white border-teal-brand shadow-md shadow-teal-brand/10'
+                      : 'bg-warm-white/50 border-transparent opacity-50'
                 }`}
               >
                 <div className="flex items-center gap-4">

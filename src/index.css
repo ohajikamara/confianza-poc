@@ -1,19 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap');
 @import "tailwindcss";
 
 /*
-  Confianza visual identity.
-  Deep teal + amber accents, off-white background, warm and calm.
-  No red anywhere — amber carries "attention" so mistakes never feel like alarms.
+  Confianza visual identity (per mocks/confianza_assessment_web_app_design.md).
+  Deep teal + warm amber on soft cream; sand borders; deep ink teal headings;
+  muted slate support text. No red anywhere — amber carries "attention" so
+  mistakes never feel like alarms.
 */
 @theme {
-  --color-teal-brand: #0E7C66;
-  --color-teal-deep: #0A5C4C;
-  --color-teal-soft: #E3F1ED;
-  --color-amber-brand: #E8A13C;
-  --color-amber-soft: #FBF0DE;
-  --color-cream: #FAF7F2;
-  --color-ink: #2B3330;
-  --color-ink-soft: #6B7773;
+  --color-teal-brand: #0E7C66;   /* primary buttons, progress, key icons */
+  --color-teal-deep: #0A5C4C;    /* hover state */
+  --color-teal-soft: #E3F1ED;    /* soft teal washes */
+  --color-amber-brand: #E8A13C;  /* selected states, warmth */
+  --color-amber-soft: #FBF0DE;   /* pale amber wash */
+  --color-cream: #F7F1E7;        /* page background */
+  --color-warm-white: #FFFDF8;   /* cards and panels */
+  --color-sand: #E8DDCB;         /* borders, progress tracks, dividers */
+  --color-ink: #093B3A;          /* deep ink teal — headings, main text */
+  --color-ink-soft: #52636A;     /* muted slate — Spanish support, helper text */
+
+  --font-display: "Plus Jakarta Sans", ui-rounded, system-ui, sans-serif;
+  --font-sans: "Nunito Sans", ui-rounded, system-ui, -apple-system, sans-serif;
 }
 
 html {
@@ -21,9 +28,13 @@ html {
 }
 
 body {
-  font-family: ui-rounded, "SF Pro Rounded", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-family: var(--font-sans);
   color: var(--color-ink);
   -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-display);
 }
 
 /* Gentle entrance for one-question-per-screen flow */

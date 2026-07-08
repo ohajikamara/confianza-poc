@@ -407,7 +407,7 @@ export default function Lesson({
               <button
                 key={chip.id}
                 onClick={() => reflect(chip)}
-                className="rounded-full bg-white border-2 border-teal-brand/20 hover:border-teal-brand px-5 py-3 transition-all active:scale-95"
+                className="rounded-full bg-warm-white border-2 border-sand hover:border-teal-brand px-5 py-3 transition-all active:scale-95"
               >
                 <span className="text-xl mr-2">{chip.emoji}</span>
                 <span className="font-medium">{chip.en}</span>
@@ -525,7 +525,7 @@ function VariantCards({ lesson, variant, compact = false }) {
       )}
       <div className="space-y-3">
         {visible.map((card, i) => (
-          <div key={i} className="rise-in rounded-2xl bg-white border border-teal-brand/15 px-4 py-3">
+          <div key={i} className="rise-in rounded-2xl bg-warm-white border border-sand px-4 py-3">
             <Bilingual en={card.en} es={card.es} size="sm" />
           </div>
         ))}
@@ -580,7 +580,7 @@ function PhraseRow({ phrase, lessonId }) {
     setPlays(plays + 1)
   }
   return (
-    <div className="flex items-center gap-3 bg-white rounded-2xl border border-teal-brand/15 px-4 py-3">
+    <div className="flex items-center gap-3 bg-warm-white rounded-2xl border border-sand px-4 py-3">
       <button
         onClick={play}
         disabled={!speechAvailable}
@@ -667,7 +667,7 @@ function MissionBeat({ lesson, profile, gentleCorrections, onResult, onDone }) {
       {mission.type === 'arrange' && (
         <>
           {/* The sentence being built */}
-          <div className="min-h-14 rounded-2xl border-2 border-dashed border-teal-brand/30 bg-white px-4 py-3 my-4 flex flex-wrap gap-2 items-center">
+          <div className="min-h-14 rounded-2xl border-2 border-dashed border-teal-brand/30 bg-warm-white px-4 py-3 my-4 flex flex-wrap gap-2 items-center">
             {chosen.length === 0 && (
               <span className="text-sm text-ink-soft italic">Tap the words in order · Toca las palabras en orden</span>
             )}
@@ -688,7 +688,7 @@ function MissionBeat({ lesson, profile, gentleCorrections, onResult, onDone }) {
                 key={i}
                 disabled={chosen.includes(i) || !!result}
                 onClick={() => setChosen([...chosen, i])}
-                className="rounded-xl bg-white border-2 border-teal-brand/25 px-3 py-1.5 font-medium disabled:opacity-25 hover:border-teal-brand transition-all active:scale-95"
+                className="rounded-xl bg-warm-white border-2 border-sand px-3 py-1.5 font-medium disabled:opacity-25 hover:border-teal-brand transition-all active:scale-95"
               >
                 {word}
               </button>

@@ -25,6 +25,8 @@ export default function App() {
 
   const [screen, setScreen] = useState('welcome')
   const [profile, setProfile] = useState(createEmptyProfile)
+  // Mid-assessment progress (answers map + question index), restored on resume.
+  const [assessmentProgress, setAssessmentProgress] = useState(null)
   const [completedLessons, setCompletedLessons] = useState([])
   const [activeLessonId, setActiveLessonId] = useState(null)
   // Confidence trend: one point at baseline + one after each lesson.
@@ -43,14 +45,21 @@ export default function App() {
   /* Persist a snapshot on every meaningful transition (degrades silently
      to in-memory-only if storage is unavailable). */
   useEffect(() => {
-    // Not during welcome/assessment: resuming mid-assessment would replay
-    // answer effects onto an already-shifted profile. Lessons resume at Home.
+    // Mid-assessment saving happens via the explicit "Save and continue later"
+    // button (answers are folded into the profile only at the end, so a
+    // resumed assessment never double-applies effects). Lessons resume at Home.
     if (screen === 'welcome' || screen === 'assessment') return
     saveSnapshot({ screen: screen === 'lesson' ? 'home' : screen, profile, completedLessons, confidenceTrend, reviewQueue })
   }, [screen, profile, completedLessons, confidenceTrend, reviewQueue])
 
+  /* "Save and continue later" from inside the assessment. */
+  function saveAssessmentProgress(answers, index) {
+    saveSnapshot({ screen: 'assessment', assessment: { answers, index }, profile, completedLessons, confidenceTrend, reviewQueue })
+  }
+
   function startFresh() {
     clearSnapshot()
+    setAssessmentProgress(null)
     setProfile(createEmptyProfile())
     setCompletedLessons([])
     setConfidenceTrend([])
@@ -65,7 +74,10 @@ export default function App() {
     setCompletedLessons(snapshot.completedLessons || [])
     setConfidenceTrend(snapshot.confidenceTrend || [])
     setReviewQueue(snapshot.reviewQueue || [])
-    setScreen(snapshot.screen === 'assessment' ? 'assessment' : snapshot.screen)
+    if (snapshot.screen === 'assessment' && snapshot.assessment) {
+      setAssessmentProgress(snapshot.assessment)
+    }
+    setScreen(snapshot.screen)
   }
 
   function completeAssessment(finalProfile) {
@@ -105,7 +117,12 @@ export default function App() {
       )}
 
       {screen === 'assessment' && (
-        <Assessment profile={profile} onProfileChange={setProfile} onComplete={completeAssessment} />
+        <Assessment
+          initialAnswers={assessmentProgress?.answers || {}}
+          initialIndex={assessmentProgress?.index || 0}
+          onSaveProgress={saveAssessmentProgress}
+          onComplete={completeAssessment}
+        />
       )}
 
       {screen === 'reveal' && <ProfileReveal profile={profile} onStart={() => setScreen('home')} />}

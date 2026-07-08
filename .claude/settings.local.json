@@ -12,7 +12,19 @@
       "Bash(git init *)",
       "Bash(git add *)",
       "Bash(git commit -m 'Confianza proof of concept — assessment, adaptive micro-course, EI engine *)",
-      "Bash(gh repo *)"
+      "Bash(gh repo *)",
+      "mcp__dailey-os__dailey_create_project",
+      "mcp__dailey-os__dailey_deploy_status",
+      "mcp__dailey-os__dailey_project_info",
+      "WebFetch(domain:confianza-poc.dailey.cloud)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" https://confianza-poc.dailey.cloud)",
+      "Bash(curl -s -A \"Mozilla/5.0 \\(iPhone; CPU iPhone OS 17_0 like Mac OS X\\) AppleWebKit/605.1.15\" https://confianza-poc.dailey.cloud)",
+      "mcp__dailey-os__dailey_images_info",
+      "mcp__dailey-os__dailey_images_enable",
+      "mcp__dailey-os__dailey_images_generate",
+      "Bash(curl -sL \"https://v3b.fal.media/files/b/0aa161e5/y7hUA1z1cViXVhV3uB1WR_7eccdb485e3045e6aa1d2d80f3369faf.jpg\" -o public/cafe-scene.jpg)",
+      "Bash(git commit -m 'Restyle to Confianza design system: two-column assessment, new palette & typography *)",
+      "Bash(git push *)"
     ]
   }
 }

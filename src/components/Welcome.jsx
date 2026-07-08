@@ -1,14 +1,13 @@
-import { Bilingual, BigButton, Screen, Card } from './ui'
+import { Bilingual, BigButton, Screen, Card, Logo } from './ui'
 
 export default function Welcome({ onStart, hasSnapshot, onResume }) {
   return (
-    <Screen>
+    <Screen showLogo={false}>
       <div className="flex-1 flex flex-col justify-center rise-in">
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-3xl bg-teal-brand text-white text-3xl font-bold mb-4 shadow-lg shadow-teal-brand/25">
-            C
+          <div className="flex justify-center mb-3">
+            <Logo />
           </div>
-          <h1 className="text-3xl sm:text-4xl font-bold text-teal-deep">Confianza</h1>
           <p className="text-ink-soft mt-1">English, built around how YOU learn.</p>
           <p className="text-ink-soft/80 text-sm italic">Inglés, construido alrededor de cómo aprendes TÚ.</p>
         </div>

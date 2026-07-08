@@ -63,7 +63,7 @@ export default function CourseComplete() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@email.com"
-                  className="flex-1 rounded-xl border-2 border-teal-brand/20 px-4 py-3 bg-white focus:border-teal-brand outline-none text-sm"
+                  className="flex-1 rounded-xl border-2 border-sand px-4 py-3 bg-warm-white focus:border-teal-brand outline-none text-sm"
                 />
                 <button
                   onClick={saveEmail}
