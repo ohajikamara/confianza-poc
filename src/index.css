@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+/*
+  Confianza visual identity.
+  Deep teal + amber accents, off-white background, warm and calm.
+  No red anywhere — amber carries "attention" so mistakes never feel like alarms.
+*/
+@theme {
+  --color-teal-brand: #0E7C66;
+  --color-teal-deep: #0A5C4C;
+  --color-teal-soft: #E3F1ED;
+  --color-amber-brand: #E8A13C;
+  --color-amber-soft: #FBF0DE;
+  --color-cream: #FAF7F2;
+  --color-ink: #2B3330;
+  --color-ink-soft: #6B7773;
+}
+
+html {
+  background-color: var(--color-cream);
+}
+
+body {
+  font-family: ui-rounded, "SF Pro Rounded", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Gentle entrance for one-question-per-screen flow */
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.rise-in { animation: rise-in 0.35s ease-out both; }

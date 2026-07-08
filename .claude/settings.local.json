@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__f12d2a1a-a657-450f-916f-844692246514__read_file_content",
+      "Bash(npm --version)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "mcp__dailey-os__dailey_os_guide",
+      "mcp__dailey-os__dailey_whoami",
+      "Bash(gh auth *)",
+      "Bash(git config *)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit -m 'Confianza proof of concept — assessment, adaptive micro-course, EI engine *)",
+      "Bash(gh repo *)"
+    ]
+  }
+}
